@@ -234,12 +234,6 @@ img {
 }
 
 
-.button.prime:hover,
-.button.prime:focus {
-	color: var(--accent-color);
-	background-color: var(--white);
-}
-
 
 .button.secondsry {
 
