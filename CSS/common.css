@@ -85,6 +85,8 @@ img {
 	font-size: 26px;
 	line-height: 1.1;
 	text-decoration: none;
+
+	transition: var(--animation);
 }
 
 .accent {
@@ -92,7 +94,10 @@ img {
 	color: var(--accent-color);
 }
 
-
+.logo:hover,
+.logo:focus {
+	color: var(--accent-color);
+}
 
 
 /*page-header {
@@ -123,6 +128,7 @@ img {
 	display: block;
 	color: var(--title-text-color);
 	text-decoration: none;
+	transition: color var(--animation);
 }
 
 .item:not(:last-child) {
@@ -167,6 +173,9 @@ img {
 	text-decoration: none;
 	color: var(--primary-text-color);
 	fill: var(--svg-color);
+
+	transition: color var(--animation),
+	fill var(--animation);
 }
 
 .contacts-data:hover,
@@ -174,6 +183,28 @@ img {
 	color: var(--accent-color);
 	fill: var(--accent-color);
 }
+
+
+.current {
+	display: block;
+	position: relative;
+}
+
+.current::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background: var(--accent-color);
+	border-radius: 2px;
+	left: 0;
+	bottom: -32px;
+
+}
+
+
+
 
 /* button*/
 
@@ -221,13 +252,15 @@ img {
 	line-height: 1.62;
 	cursor: pointer;
 
-	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+	transition: color var(--animation),
+	background-color var(--animation);
 }
 
 .button.secondsry:hover,
 .button.secondsry:focus {
 	background-color: var(--accent-color);
 	color: var(--white);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -439,7 +472,8 @@ padding: 0;
 		height: 44px;
 		border-radius: 50%;
 		fill: var(--svg-color)
-} 
+
+}
 
 .social-network-link:hover,
 .social-network-link:focus {
@@ -474,10 +508,8 @@ padding: 0;
 
 
 .client-link {
-
-		width: 170px;
-		height: 92px;
-
+	width: 170px;
+	height: 92px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -487,7 +519,7 @@ padding: 0;
 fill: var(--svg-color);
 
 transition: border var(--animation),
-fill var(--animation);	
+fill var(--animation);
 }
 
 .client-link:hover,
@@ -497,7 +529,8 @@ fill var(--animation);
 }
 
 .client-svg{
-	
+	width: 106px;
+	height: 60px;
 }
 
 /*footer*/
@@ -554,6 +587,7 @@ margin-bottom: 0px;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 1.71;
+	transition: color var(--animation);
 	
 }
 
@@ -601,6 +635,7 @@ margin-bottom: 0px;
 	height: 44px;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 50%;
+	transition: background-color var(--animation);
 }
 
 .join-link:hover,
@@ -632,6 +667,9 @@ margin-bottom: 0px;
 }
 
 
+
+
+
 /*.filter-item {
 	flex-basis: calc(100%-30/4);
 	margin-left: 8px;
@@ -650,8 +688,9 @@ margin-bottom: 0px;
 }
 
 .cards-item {
-flex-basis: calc((100% - 60px) / 3);
 
+flex-basis: calc((100% - 60px) / 3);
+transition: box-shadow var(--animation);
 
 /*
 margin-right: 30px;
@@ -669,11 +708,12 @@ width: 370px;
 
 .cards-link:hover .overlay {
 	transform: translateX(0);
+
 }
 
 
 .overlay {
-background: rgba(33, 150, 243, 0.9);
+background: var(--accent-color);
 
 	position: absolute;
 		top: 0;
@@ -681,7 +721,7 @@ background: rgba(33, 150, 243, 0.9);
 		width: 100%;
 		height: 100%;
 		transform: translateY(100%);
-		transition: transform 250ms ease;
+		transition: transform var(--animation);
 }
 
 .overlay> p {
