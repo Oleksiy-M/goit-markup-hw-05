@@ -86,7 +86,7 @@ img {
 	line-height: 1.1;
 	text-decoration: none;
 
-	transition: var(--animation);
+	transition: color var(--animation);
 }
 
 .accent {
@@ -247,7 +247,8 @@ img {
 	cursor: pointer;
 
 	transition: color var(--animation),
-	background-color var(--animation);
+	background-color var(--animation),
+	box-shadow var(--animation);
 }
 
 .button.secondsry:hover,
@@ -465,8 +466,10 @@ padding: 0;
 		width: 44px;
 		height: 44px;
 		border-radius: 50%;
-		fill: var(--svg-color)
+		fill: var(--svg-color);
 
+	transition: background-color var(--animation),
+	fill var(--animation);
 }
 
 .social-network-link:hover,
@@ -684,7 +687,8 @@ margin-bottom: 0px;
 .cards-item {
 
 flex-basis: calc((100% - 60px) / 3);
-transition: box-shadow var(--animation);
+transition: box-shadow var(--animation),
+transform var(--animation)
 
 /*
 margin-right: 30px;
@@ -693,16 +697,19 @@ width: 370px;
 */
 }
 
+.cards-item:hover .cards-content {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+}
+
+.cards-item:hover .overlay {
+	transform: translateX(0);
+}
+
 
 .box {
 	position: relative;
 	overflow: hidden;
-}
-
-
-.cards-link:hover .overlay {
-	transform: translateX(0);
-
 }
 
 
@@ -717,6 +724,7 @@ background: var(--accent-color);
 		transform: translateY(100%);
 		transition: transform var(--animation);
 }
+
 
 .overlay> p {
 	margin: 0;
@@ -778,12 +786,6 @@ background: var(--accent-color);
 	text-decoration: none;
 	display: block;
 }
-
-.cards-link:hover .cards-content {
-	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-
-}
-
 
 
 
